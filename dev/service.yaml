@@ -6,6 +6,6 @@ spec:
   selector:
     app: myapi-store
   ports:
-  - port: 
+  - port: 81
     protocol: TCP
     targetPort: 81
