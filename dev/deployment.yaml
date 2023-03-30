@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        app: myapi-store
+        app: myapistore
     spec:
       containers:
       - name: myapi-store
