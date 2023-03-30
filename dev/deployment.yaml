@@ -5,15 +5,15 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: myapp-service
+      app: myapi-store
   replicas: 2
   template:
     metadata:
       labels:
-        app:  myapp-service
+        app: myapi-store
     spec:
       containers:
-      - name:  myapp-service
+      - name: myapi-store
         image: misticar/api-store:1-2
         ports:
         - containerPort: 81
