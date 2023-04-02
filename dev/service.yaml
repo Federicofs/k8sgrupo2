@@ -8,4 +8,6 @@ spec:
   ports:
   - port: 81
     protocol: TCP
-    targetPort: 80
+    targetPort: 81
+  - port: 27017
+    targetPort: 27017
