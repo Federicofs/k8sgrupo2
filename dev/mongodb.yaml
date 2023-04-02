@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mongo
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  serviceName: database
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: mongodb
+        image: mongo
+        env:
+          - name: MONGO_ROOT_PASSWORD
+            valueFrom:
+              - secretKeyRef:
+                name: mongo_root-credential
+                key: password
+        ports:
+          - containerPort: 27017
+            name: mongo
+        volumeMounts:
+        - name: apidata
+          mountPath: "/data"
+  volumeClaimTemplates:
+  - metadata:
+      name: apiata
+    spec:
+      accessModes: 
+      - ReadWriteOnce 
+      resources:
+        requests:
+          storage: 2Mi
