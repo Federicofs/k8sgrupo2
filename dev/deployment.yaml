@@ -13,8 +13,8 @@ spec:
         app: myapp
     spec:
       containers:
-      - name: myapp
-        image: misticar/api-store:1-2
-        ports:
-        - containerPort: 80
+      - name: myapp 
+      image: misticar/api-store:1-2
+      ports:
+      - containerPort: 80
         
