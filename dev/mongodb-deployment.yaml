@@ -12,7 +12,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      io.kompose.service: mongodb
+      io.kompose.service: mongo-nodeport-svc
   strategy:
     type: Recreate
   template:
@@ -23,7 +23,7 @@ spec:
       creationTimestamp: null
       labels:
         io.kompose.network/argodb-default: "true"
-        io.kompose.service: mongodb
+        io.kompose.service: mongo-nodeport-svc
     spec:
       containers:
         - env:

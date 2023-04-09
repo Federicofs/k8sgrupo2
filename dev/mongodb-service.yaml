@@ -6,14 +6,14 @@ metadata:
     kompose.version: 1.28.0 (c4137012e)
   creationTimestamp: null
   labels:
-    io.kompose.service: mongodb
-  name: mongodb
+    io.kompose.service: mongo-nodeport-svc
+  name: mongo-nodeport-svc
 spec:
   ports:
     - name: "27017"
       port: 27017
       targetPort: 27017
   selector:
-    io.kompose.service: mongodb
+    io.kompose.service: mongo-nodeport-svc
 status:
   loadBalancer: {}
